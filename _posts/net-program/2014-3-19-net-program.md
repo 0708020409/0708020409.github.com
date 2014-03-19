@@ -8,7 +8,7 @@ tags: [网络编程]
 {% include JB/setup %}
 
 
-前段时间微博上注意到淘叔度大神，发了两篇关于面试的微博：
+前段时间微博上注意到[淘叔度大神] [7]，发了两篇关于面试的微博：
 
 {% highlight bash%}
 一些小伙伴们写网络程序的一个坏习惯是连接建立后就挂上可写事件，这是很浪费的。正确的方法是先写，写不下去才挂上可写事件。另外，可写事件其实不是事件，它只是判断发送缓冲区是否还有空间，它是被底层的TCP事件给附带上来的。附图是Linux内核源码实现。
@@ -96,10 +96,10 @@ EINPROGRESS
 
 **缓冲区**
 
-发送缓冲区(send buffer) 
-    eg:发送一个14M的buffer--公司客户端某些同事，就是在nonblocking模式下发送14m文件的，而且他就send了一次。
-        1.block模式下，等待所有的buffer发送完后返回；【block方式有可能返回小于buffer长度的值么？嗯，是的。在对方异常关闭或超时是会造成返回小于buffer长度的值--如果对端返回rst时，继续写的话会产生SIGPIPE,这里需要特别注意，因为sigpipe默认处理是关闭进程！一般情况下，需要捕捉此信号】
-        2.noblocking模式下，若返回值为-1，errno=EAGAIN,则加入侦听；若返回值为大于0,则循环继续发送；
+发送缓冲区(send buffer)   
+-   eg:发送一个14M的buffer--公司客户端某些同事，就是在nonblocking模式下发送14m文件的，而且他就send了一次。  
+-   1.block模式下，等待所有的buffer发送完后返回；【block方式有可能返回小于buffer长度的值么？嗯，是的。在对方异常关闭或超时是会造成返回小于buffer长度的值如果对端返回rst时，继续写的话会产生SIGPIPE,这里需要特别注意，因为sigpipe默认处理是关闭进程！一般情况下，需要捕捉此信号】
+-   2.noblocking模式下，若返回值为-1，errno=EAGAIN,则加入侦听；若返回值为大于0,则循环继续发送；
 
 这个要说下nginx：
 
@@ -129,12 +129,16 @@ void memcpy(void *src,void *dst)
     epoll返回可写事件，调用recv返回0，则表示对端关闭。对端close，若拔网线呢？keepalive情况下会触发可写事件。
 
 
+
+
+
 [1]: https://raw.github.com/0708020409/0708020409.github.com/master/_img/sendbufevent.jpg
 [2]: http://blog.csdn.net/brainkick/article/details/9843009
 [3]: http://ifeve.com/disruptor-cacheline-padding/
 [4]: http://www.zhihu.com/question/20502870
 [5]: http://nginx.org/en/docs/ngx_core_module.html#accept_mutex
 [6]: http://nginx.org/en/docs/ngx_core_module.html#multi_accept
+[7]: http://weibo.com/tshudu
 
 
 
