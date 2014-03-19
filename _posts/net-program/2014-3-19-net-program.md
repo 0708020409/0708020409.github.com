@@ -129,7 +129,7 @@ void memcpy(void *src,void *dst)
     epoll返回可写事件，调用recv返回0，则表示对端关闭。对端close，若拔网线呢？keepalive情况下会触发可写事件。
 
 
-[1]: http://0708020409.github.io/_img/sendbufevent.jpg
+[1]: https://raw.github.com/0708020409/0708020409.github.com/master/_img/sendbufevent.jpg
 [2]: http://blog.csdn.net/brainkick/article/details/9843009
 [3]: http://ifeve.com/disruptor-cacheline-padding/
 [4]: http://www.zhihu.com/question/20502870
