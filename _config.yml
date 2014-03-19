@@ -9,13 +9,11 @@ pygments: true
 # so be sure to set them if your theme uses them.
 #
 title : Jekyll Bootstrap
-tagline: Site Tagline
+tagline: If i rest,i rust.
 author :
-  name : Name Lastname
-  email : blah@email.test
-  github : username
-  twitter : username
-  feedburner : feedname
+  name : 0708020409
+  email : l0708020409@gmail.com
+  github : 0708020409
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -82,11 +80,11 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : jekyllbootstrap
+      short_name : 0708020409
     livefyre :
-      site_id : 123
+      site_id : 0708020409
     intensedebate :
-      account : 123abc
+      account : 0708020409
     facebook :
       appid : 123
       num_posts: 5
