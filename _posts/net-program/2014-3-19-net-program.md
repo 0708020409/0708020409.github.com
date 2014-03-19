@@ -132,7 +132,7 @@ void memcpy(void *src,void *dst)
 
 
 
-[1]: http://0708020409.github.io/img/sendbufevent.jpg
+[1]: http://192.168.65.134:4000/img/sendbufevent.jpg
 [2]: http://blog.csdn.net/brainkick/article/details/9843009
 [3]: http://ifeve.com/disruptor-cacheline-padding/
 [4]: http://www.zhihu.com/question/20502870
