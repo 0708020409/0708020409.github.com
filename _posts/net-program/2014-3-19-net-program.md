@@ -38,12 +38,12 @@ tags: [网络编程]
 
 问题：  
     nginx使用了何种触发方式？  
--   listen的socket用的水平触发，而accept之后的端口使用的是边沿触发。  
+listen的socket用的水平触发，而accept之后的端口使用的是边沿触发。  
     哇。。为何这么麻烦?  
 -   1.listen的fd使用水平触发是因为害怕丢失链接；其实使用边沿触发也有解决办法：用while循环抱住accept调用，处理完TCP就绪队列中的所有连接后再退出循环。nginx有个配置选项：[multi_accept] [6],这是为啥？莫非是为了减少epoll_wait的系统调用?  
 -   2.使用ET可以有效的减少系统调用，但是ET，LT哪种更高效，貌似没用确切的结论。[ET理论上可以比LT少带来一些系统调用，所以更省一些。具体的性能提高有多少，要看应用场景。不过绝大部分场景下，LT是足够的。] [4] 
  
-nginx水平触发代码如下：若nginx配置[accept_mutex] [5]on时会调用如下函数  
+nginx水平触发代码如下：若nginx配置[accept_mutex] [5] on时会调用如下函数  
 
 {% highlight cpp %}
 static ngx_int_t
@@ -80,7 +80,7 @@ ngx_enable_accept_events(ngx_cycle_t *cycle)
 {% endhighlight %}
 
 一道面试题目：
-使用Linuxepoll模型，水平触发模式；当socket可写时，会不停的触发socket可写的事件，如何处理？
+使用Linux epoll模型，水平触发模式；当socket可写时，会不停的触发socket可写的事件，如何处理？
 
 
 另一个问题：
@@ -97,7 +97,7 @@ EINPROGRESS
 **缓冲区**
 
 发送缓冲区(send buffer)   
--   eg:发送一个14M的buffer--公司客户端某些同事，就是在nonblocking模式下发送14m文件的，而且他就send了一次。  
+ex:发送一个14M的buffer--公司客户端某些同事，就是在nonblocking模式下发送14m文件的，而且他就send了一次。  
 -   1.block模式下，等待所有的buffer发送完后返回；【block方式有可能返回小于buffer长度的值么？嗯，是的。在对方异常关闭或超时是会造成返回小于buffer长度的值如果对端返回rst时，继续写的话会产生SIGPIPE,这里需要特别注意，因为sigpipe默认处理是关闭进程！一般情况下，需要捕捉此信号】
 -   2.noblocking模式下，若返回值为-1，errno=EAGAIN,则加入侦听；若返回值为大于0,则循环继续发送；
 
