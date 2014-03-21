@@ -6,8 +6,7 @@
 /* Override some defaults */
 /* line 13, ../_sass/_base.scss */
 html, body {
-  background-color: #FFF;
-  background: url(../images/bgs/body.png) repeat;
+  background-color: rgb(39, 35, 35);
 }
 
 /* line 18, ../_sass/_base.scss */
