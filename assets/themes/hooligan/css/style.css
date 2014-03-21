@@ -6,17 +6,17 @@
 /* Override some defaults */
 /* line 13, ../_sass/_base.scss */
 html, body {
-  background-color: #2a2a2a;
+  background-color: #FFF;
   background: url(../images/bgs/body.png) repeat;
 }
 
 /* line 18, ../_sass/_base.scss */
 body {
   color: #bbb;
-  text-shadow: 1px 1px 1px #000;
   height: 100%;
-  font-family: '微软雅黑', sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 14px;
+  font-weight: inherit;
 }
 
 /* line 26, ../_sass/_base.scss */
