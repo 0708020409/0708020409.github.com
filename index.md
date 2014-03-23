@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: If i rest,i rust !
+tagline: 
 ---
 {% include JB/setup %}
 

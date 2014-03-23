@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "两篇微博引发的思考"
-description: ""
+description: "epoll,网络优化，nginx优化，边沿触发"
 category: "网络编程"
 tags: [网络编程]
 ---
