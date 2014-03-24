@@ -277,5 +277,5 @@ wireshark过滤nginx返回包：
 
 31 62 代表此chunk的长度：0x1b 即27个字节；然后跟着分隔符CRLF;再次就是数据27个字节;最后又是分隔符CRLF。
 
-[1]: http://192.168.65.134:4000/img/HttpChunkedFilterModule.png
+[1]: http://0708020409.github.io/img/HttpChunkedFilterModule.png
 [2]: http://openresty.org/
