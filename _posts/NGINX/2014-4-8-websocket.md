@@ -187,6 +187,9 @@ Sec-WebSocket-Accept: OedKikXLqz4gzGARLjmhZzRcNjk=
 
 具体实现可以看春哥的[lua-resty-websocket] [2]，实际上就是lua通过ngx.req.socket接管http处理的socket，然后在此socket上实现websocket协议。剩余的都是协议[RFC6455] [1]的实现。
 
+嘎嘎嘎，这里得瑟下，我给春哥提了个bug。虽然是个简单的[bug] [3]，但是嘎嘎嘎嘎，现在的我迫切需要得到别人的肯定。
+
 
 [1]: http://tools.ietf.org/html/rfc6455
 [2]: https://github.com/agentzh/lua-resty-websocket
+[3]: https://github.com/agentzh/lua-resty-websocket/commit/ac37f98
