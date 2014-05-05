@@ -7,8 +7,8 @@ tags: [EverNote]
 ---
 {% include JB/setup %}
 
-###	2014
--	5.1 [Nginx与Apache使用场景问题分析][1]
+
+[EverNote记录列表][1]
 
 
 
@@ -18,6 +18,4 @@ tags: [EverNote]
 
 
 
-
-
-[1]: https://app.yinxiang.com/shard/s2/sh/73bbf388-f880-4302-8bf0-7c9d4bbdc377/c94fd42ae8c28be6b33ebf14e4928c70
+[1]: https://app.yinxiang.com/shard/s2/sh/25374142-839a-438b-81f2-44f6be67ac3c/290568cd9af51a3e96d87d8a1ff76ddd
