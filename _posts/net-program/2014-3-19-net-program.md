@@ -110,7 +110,7 @@ void memcpy(void *src,void *dst)
 在传输文件时，我们可以做那些优化呢？
 
 接收缓冲区(read buffer)
-    epoll返回可写事件，调用recv返回0，则表示对端关闭。对端close，若拔网线呢？keepalive情况下会触发可写事件。
+    epoll返回可读事件，调用recv返回0，则表示对端关闭。对端close，若拔网线呢？keepalive情况下会触发可读事件。
 
 
 
